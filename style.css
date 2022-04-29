@@ -1,0 +1,145 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h5 {
+  margin: 30px 20px 10px;
+}
+header {
+  padding: 10px 10px 30px;
+  font-size: 18px;
+  margin: 0;
+}
+main {
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 10px;
+  background: white;
+  box-shadow: 2px 2px 5px #79c2d0;
+  transition: all 200ms ease-in-out;
+}
+
+.container {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 700px;
+  background: #bbe4e9;
+}
+
+.col {
+  display: grid;
+  align-items: center;
+}
+.search {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 16px;
+}
+.input-city {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #5585b5;
+}
+.submit-button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #5585b5;
+  border: 1px solid #5585b5;
+}
+.today-main-info {
+  font-size: 22px;
+  text-align: left;
+  padding-left: 50px;
+  line-height: 1.3;
+}
+.today-temp {
+  font-size: 60px;
+  font-weight: 600;
+}
+.units {
+  font-size: 18px;
+  position: relative;
+  top: -28px;
+}
+.change-unit {
+  text-decoration: none;
+}
+.C {
+  color: black;
+  font-weight: bold;
+}
+.F {
+  color: grey;
+}
+.today-icon {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+.today-orther-info {
+  font-size: 18px;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+.forecast {
+  margin: 0;
+}
+
+.box {
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 5px;
+  transition: all 200ms ease-in-out;
+  background: white;
+}
+.box:hover {
+  box-shadow: 2px 2px 5px #79c2d0;
+}
+.forecast-temp {
+  margin: 0;
+}
+.forecast-icon {
+  height: 60px;
+}
+.max {
+  font-weight: bold;
+  text-align: center;
+}
+.min {
+  color: grey;
+  text-align: center;
+}
+.changecolorblack {
+  color: black;
+  font-weight: bold;
+}
+
+.changecolorgrey {
+  color: grey;
+  font-weight: normal;
+}
+
+#description {
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+#current-button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background: #5585b5;
+  color: white;
+  float: right;
+  transition: all 200ms ease-in-out;
+}
+
+#current-button:hover {
+  background: white;
+  color: #5585b5;
+  box-shadow: 2px 2px 5px #5585b5;
+}
