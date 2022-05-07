@@ -1,17 +1,16 @@
 //show current time
-function formatDate(now) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+function formatDate(time) {
+  let now = new Date(time);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[now.getDay()];
   let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   let date = now.getDate();
   let months = [
     "January",
@@ -29,15 +28,10 @@ function formatDate(now) {
   ];
   let month = months[now.getMonth()];
   let year = now.getFullYear();
-  return `${day} ${hours}:${minutes
-    .toString()
-    .padStart(2, "0")}<br />${month} ${date}, ${year}`;
+  return `${day} ${hours}:${minutes}<br />${month} ${date}, ${year}`;
 }
 
 let currentTime = new Date();
-
-let appDate = document.querySelector("#date");
-appDate.innerHTML = formatDate(currentTime);
 
 // weather API
 function getInformation(response) {
@@ -63,6 +57,8 @@ function getInformation(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let appDate = document.querySelector("#date");
+  appDate.innerHTML = formatDate(response.data.dt * 1000);
 }
 function getApi(city) {
   let apiKey = `245cfd044fd3ce558ead6cf2d614aba8`;

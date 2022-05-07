@@ -127,7 +127,10 @@ main {
 .unactive:hover {
   text-decoration: underline;
 }
-
+/*#updated-time {
+  font-size: 18px;
+}
+*/
 #description {
   font-size: 18px;
 }
