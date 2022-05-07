@@ -42,11 +42,12 @@ appDate.innerHTML = formatDate(currentTime);
 // weather API
 function getInformation(response) {
   console.log(response.data);
+  todayTemperature = response.data.main.temp;
+  let currentTemp = document.querySelector("#today-temp");
+  currentTemp.innerHTML = Math.round(todayTemperature);
+
   let city = document.querySelector(".city");
   city.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
-
-  let currentTemp = document.querySelector("#today-temp");
-  currentTemp.innerHTML = Math.round(response.data.main.temp);
 
   let todayDescription = document.querySelector("#description");
   todayDescription.innerHTML = response.data.weather[0].description;
@@ -88,6 +89,29 @@ function getPosition() {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#today-temp");
+  currentTemp.innerHTML = Math.round((todayTemperature * 9) / 5 + 32);
+
+  fahrenheit.classList.remove("unactive");
+  fahrenheit.classList.add("active");
+
+  celsius.classList.remove("active");
+  celsius.classList.add("unactive");
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#today-temp");
+  currentTemp.innerHTML = Math.round(todayTemperature);
+
+  celsius.classList.remove("unactive");
+  celsius.classList.add("active");
+
+  fahrenheit.classList.remove("active");
+  fahrenheit.classList.add("unactive");
+}
 let form = document.querySelector("form");
 form.addEventListener("submit", updateInformation);
 
@@ -96,36 +120,12 @@ getApi("Hanoi");
 let button = document.querySelector("#current-button");
 button.addEventListener("click", getPosition);
 
+let todayTemperature = null;
+
 // change unit of temperature
 
-/*function changeTempt(event) {
-  event.preventDefault();
-  let newtemp = temperature * 1.8 + 32;
-  todayTemp.innerHTML = Math.round(newtemp);
-
-  fahrenheit.classList.remove("changecolorgrey");
-  fahrenheit.classList.add("changecolorblack");
-
-  celsius.classList.remove("changecolorblack");
-  celsius.classList.add("changecolorgrey");
-}
-
-function convertTemp(event) {
-  event.preventDefault();
-  todayTemp.innerHTML = temperature;
-
-  celsius.classList.remove("changecolorgrey");
-  celsius.classList.add("changecolorblack");
-
-  fahrenheit.classList.remove("changecolorblack");
-  fahrenheit.classList.add("changecolorgrey");
-}
-
-let temperature = 18;
-let todayTemp = document.querySelector(".today-temp");
-todayTemp.innerHTML = temperature;
 let celsius = document.querySelector("a.C");
 let fahrenheit = document.querySelector("a.F");
 
-fahrenheit.addEventListener("click", changeTempt);
-celsius.addEventListener("click", convertTemp);*/
+fahrenheit.addEventListener("click", convertToFahrenheit);
+celsius.addEventListener("click", convertToCelsius);

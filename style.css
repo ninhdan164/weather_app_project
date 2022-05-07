@@ -63,15 +63,14 @@ main {
   position: relative;
   top: -28px;
 }
-.change-unit {
-  text-decoration: none;
-}
 .C {
   color: black;
   font-weight: bold;
+  text-decoration: none;
 }
 .F {
   color: grey;
+  text-decoration: none;
 }
 .today-icon {
   width: 150px;
@@ -113,19 +112,28 @@ main {
   color: grey;
   text-align: center;
 }
-.changecolorblack {
+.active {
   color: black;
   font-weight: bold;
 }
+.active:hover {
+  cursor: default;
+}
 
-.changecolorgrey {
+.unactive {
   color: grey;
   font-weight: normal;
 }
+.unactive:hover {
+  text-decoration: underline;
+}
 
 #description {
+  font-size: 18px;
+}
+
+#description:first-letter {
   text-transform: capitalize;
-  font-size: 20px;
 }
 
 #current-button {
