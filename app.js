@@ -41,6 +41,7 @@ appDate.innerHTML = formatDate(currentTime);
 
 // weather API
 function getInformation(response) {
+  console.log(response.data);
   let city = document.querySelector(".city");
   city.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
@@ -51,10 +52,16 @@ function getInformation(response) {
   todayDescription.innerHTML = response.data.weather[0].description;
 
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  humidity.innerHTML = response.data.main.humidity;
 
   let windSpeed = document.querySelector("#windSpeed");
-  windSpeed.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
+
+  let iconElement = document.querySelector(".today-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function getApi(city) {
   let apiKey = `245cfd044fd3ce558ead6cf2d614aba8`;

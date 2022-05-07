@@ -30,7 +30,7 @@
             <form>
               <input
                 class="input-city"
-                type="text"
+                type="search"
                 placeholder="Search city"
                 autocomplete="off"
               />
@@ -44,9 +44,9 @@
         <div class="row">
           <div class="col">
             <div class="today-main-info">
-              <span class="city">Ha Noi</span>
+              <span class="city"></span>
               <br />
-              <span class="today-temp" id="today-temp">18</span
+              <span class="today-temp" id="today-temp"></span
               ><span class="units"
                 ><a href="#" class="change-unit C">°C</a> |<a
                   class="change-unit F"
@@ -63,8 +63,8 @@
           </div>
           <div class="col">
             <ul class="today-orther-info">
-              <li id="humidity">Humidity: 78%</li>
-              <li id="windSpeed">Wind: 11km/h</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="windSpeed"></span>km/h</li>
             </ul>
           </div>
         </div>
