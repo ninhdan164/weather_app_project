@@ -23,105 +23,117 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <div class="row">
-          <div class="col-3" id="date"></div>
-          <div class="col-6 search">
-            <form>
-              <input
-                class="input-city"
-                type="search"
-                placeholder="Search city"
-                autocomplete="off"
-              />
-              <input type="submit" value="🔍" class="submit-button" />
-            </form>
-          </div>
-          <div class="col-3"><button id="current-button">Current</button></div>
-        </div>
-      </header>
-      <main>
-        <div class="row">
-          <div class="col">
-            <div class="today-main-info">
-              <span class="city"></span>
-              <br />
-              <span class="today-temp" id="today-temp"></span
-              ><span class="units"
-                ><a href="#" class="C active">°C</a> |<a class="F" href="#"
-                  >°F</a
-                ></span
-              >
-              <br />
-              <div id="description"></div>
+      <div class="app-border">
+        <header>
+          <div class="row">
+            <div class="col-3" id="date"></div>
+            <div class="col-6 search">
+              <form>
+                <input
+                  class="input-city"
+                  type="search"
+                  placeholder="Search city"
+                  autocomplete="off"
+                />
+                <input type="submit" value="🔍" class="submit-button" />
+              </form>
+            </div>
+            <div class="col-3">
+              <button id="current-button">Current</button>
             </div>
           </div>
-          <div class="col">
-            <img class="today-icon" src="img/cloudy.png" />
-          </div>
-          <div class="col">
-            <ul class="today-orther-info">
-              <li>Humidity: <span id="humidity"></span>%</li>
-              <li>Wind: <span id="windSpeed"></span>km/h</li>
-            </ul>
-          </div>
-        </div>
-      </main>
-      <footer>
-        <h5>5 days forecast</h5>
-        <div class="row forecast">
-          <div class="col box">
-            Sunday
-            <div>
-              <img src="img/partly_cloudy.png" class="forecast-icon" />
+        </header>
+        <main>
+          <div class="row">
+            <div class="col">
+              <div class="today-main-info">
+                <span class="city"></span>
+                <br />
+                <span class="today-temp" id="today-temp"></span
+                ><span class="units"
+                  ><a href="#" class="C active">°C</a> |<a class="F" href="#"
+                    >°F</a
+                  ></span
+                >
+                <br />
+                <div id="description"></div>
+              </div>
             </div>
-            <div class="row forecast-temp">
-              <div class="col-6 max">33℃</div>
-              <div class="col-6 min">22℃</div>
+            <div class="col">
+              <img class="today-icon" src="img/cloudy.png" />
             </div>
-          </div>
-          <div class="col box">
-            Monday
-            <div>
-              <img src="img/partly_cloudy.png" class="forecast-icon" />
-            </div>
-            <div class="row forecast-temp">
-              <div class="col-6 max">31℃</div>
-              <div class="col-6 min">23℃</div>
+            <div class="col">
+              <ul class="today-orther-info">
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="windSpeed"></span>km/h</li>
+              </ul>
             </div>
           </div>
-          <div class="col box">
-            Tuesday
-            <div>
-              <img src="img/cloudy.png" class="forecast-icon" />
+        </main>
+        <footer>
+          <h5>5 days forecast</h5>
+          <div class="row forecast">
+            <div class="col box">
+              Sunday
+              <div>
+                <img src="img/partly_cloudy.png" class="forecast-icon" />
+              </div>
+              <div class="row forecast-temp">
+                <div class="col-6 max">33℃</div>
+                <div class="col-6 min">22℃</div>
+              </div>
             </div>
-            <div class="row forecast-temp">
-              <div class="col-6 max">24℃</div>
-              <div class="col-6 min">18℃</div>
+            <div class="col box">
+              Monday
+              <div>
+                <img src="img/partly_cloudy.png" class="forecast-icon" />
+              </div>
+              <div class="row forecast-temp">
+                <div class="col-6 max">31℃</div>
+                <div class="col-6 min">23℃</div>
+              </div>
+            </div>
+            <div class="col box">
+              Tuesday
+              <div>
+                <img src="img/cloudy.png" class="forecast-icon" />
+              </div>
+              <div class="row forecast-temp">
+                <div class="col-6 max">24℃</div>
+                <div class="col-6 min">18℃</div>
+              </div>
+            </div>
+            <div class="col box">
+              Wednesday
+              <div>
+                <img src="img/rain_light.png" class="forecast-icon" />
+              </div>
+              <div class="row forecast-temp">
+                <div class="col-6 max">25°C</div>
+                <div class="col-6 min">22°C</div>
+              </div>
+            </div>
+            <div class="col box">
+              Friday
+              <div>
+                <img src="img/partly_cloudy.png" class="forecast-icon" />
+              </div>
+              <div class="row forecast-temp">
+                <div class="col-6 max">27℃</div>
+                <div class="col-6 min">22℃</div>
+              </div>
             </div>
           </div>
-          <div class="col box">
-            Wednesday
-            <div>
-              <img src="img/rain_light.png" class="forecast-icon" />
-            </div>
-            <div class="row forecast-temp">
-              <div class="col-6 max">25°C</div>
-              <div class="col-6 min">22°C</div>
-            </div>
-          </div>
-          <div class="col box">
-            Friday
-            <div>
-              <img src="img/partly_cloudy.png" class="forecast-icon" />
-            </div>
-            <div class="row forecast-temp">
-              <div class="col-6 max">27℃</div>
-              <div class="col-6 min">22℃</div>
-            </div>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
+      <p id="edit">
+        <a
+          href="https://github.com/ninhdan164/weather_app_project"
+          target="blank"
+          >Open source-code</a
+        >
+        by Dan Do
+      </p>
     </div>
     <script src="app.js"></script>
   </body>

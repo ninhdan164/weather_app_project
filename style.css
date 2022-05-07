@@ -19,7 +19,7 @@ main {
   transition: all 200ms ease-in-out;
 }
 
-.container {
+.app-border {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 20px;
@@ -150,4 +150,7 @@ main {
   background: white;
   color: #5585b5;
   box-shadow: 2px 2px 5px #5585b5;
+}
+#edit {
+  text-align: center;
 }
