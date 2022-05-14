@@ -85,29 +85,6 @@ function getPosition() {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#today-temp");
-  currentTemp.innerHTML = Math.round((todayTemperature * 9) / 5 + 32);
-
-  fahrenheit.classList.remove("unactive");
-  fahrenheit.classList.add("active");
-
-  celsius.classList.remove("active");
-  celsius.classList.add("unactive");
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#today-temp");
-  currentTemp.innerHTML = Math.round(todayTemperature);
-
-  celsius.classList.remove("unactive");
-  celsius.classList.add("active");
-
-  fahrenheit.classList.remove("active");
-  fahrenheit.classList.add("unactive");
-}
 let form = document.querySelector("form");
 form.addEventListener("submit", updateInformation);
 
@@ -117,11 +94,3 @@ let button = document.querySelector("#current-button");
 button.addEventListener("click", getPosition);
 
 let todayTemperature = null;
-
-// change unit of temperature
-
-let celsius = document.querySelector("a.C");
-let fahrenheit = document.querySelector("a.F");
-
-fahrenheit.addEventListener("click", convertToFahrenheit);
-celsius.addEventListener("click", convertToCelsius);

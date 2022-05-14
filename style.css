@@ -83,35 +83,6 @@ main {
   list-style: none;
   padding: 0;
 }
-.forecast {
-  margin: 0;
-}
-
-.box {
-  border-radius: 5px;
-  text-align: center;
-  padding: 5px 10px;
-  margin: 5px;
-  transition: all 200ms ease-in-out;
-  background: white;
-}
-.box:hover {
-  box-shadow: 2px 2px 5px #79c2d0;
-}
-.forecast-temp {
-  margin: 0;
-}
-.forecast-icon {
-  height: 60px;
-}
-.max {
-  font-weight: bold;
-  text-align: center;
-}
-.min {
-  color: grey;
-  text-align: center;
-}
 .active {
   color: black;
   font-weight: bold;
@@ -156,4 +127,21 @@ main {
 }
 #edit {
   text-align: center;
+}
+
+.weather-forecast {
+  text-align: center;
+  margin: 20px 10px 0;
+  padding: 0 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: white;
+  line-height: 1.5;
+}
+.forecast-temp {
+  margin: 0 5px;
+}
+.forecast-icon {
+  display: block;
+  margin: 0 auto;
 }
