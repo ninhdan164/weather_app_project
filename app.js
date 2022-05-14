@@ -34,8 +34,56 @@ function formatDate(time) {
 let currentTime = new Date();
 
 // weather API
+function dateForcast(dt) {
+  let time = new Date(dt * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thurday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[time.getDay()];
+}
+function showWeatherForecast(response) {
+  let days = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2 weather-forecast">
+              <div class="forecast-date">${dateForcast(day.dt)}</div>
+              <img
+                src="http://openweathermap.org/img/wn/${
+                  day.weather[0].icon
+                }@2x.png"
+                class="forecast-icon"
+              />
+              <div>
+                <span class="forecast-temp max">${Math.round(
+                  day.temp.max
+                )}°C</span
+                ><span class="forecast-temp min">${Math.round(
+                  day.temp.min
+                )}°C</span>
+              </div></div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+function getAPIfforecast(coord) {
+  let apiKey = `245cfd044fd3ce558ead6cf2d614aba8`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(showWeatherForecast);
+}
+
 function getInformation(response) {
-  console.log(response.data);
   todayTemperature = response.data.main.temp;
   let currentTemp = document.querySelector("#today-temp");
   currentTemp.innerHTML = Math.round(todayTemperature);
@@ -59,6 +107,8 @@ function getInformation(response) {
   );
   let appDate = document.querySelector("#date");
   appDate.innerHTML = formatDate(response.data.dt * 1000);
+
+  getAPIfforecast(response.data.coord);
 }
 function getApi(city) {
   let apiKey = `245cfd044fd3ce558ead6cf2d614aba8`;
@@ -92,5 +142,3 @@ getApi("Hanoi");
 
 let button = document.querySelector("#current-button");
 button.addEventListener("click", getPosition);
-
-let todayTemperature = null;

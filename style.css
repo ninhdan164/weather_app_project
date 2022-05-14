@@ -16,16 +16,19 @@ main {
   padding: 10px;
   background: white;
   box-shadow: 2px 2px 5px #79c2d0;
-  transition: all 200ms ease-in-out;
+}
+
+footer {
+  margin: 0 5px;
 }
 
 .app-border {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 20px;
-  margin: 30px auto;
+  margin: 70px auto 0;
   max-width: 700px;
-  background: #bbe4e9;
+  background: rgba(187, 228, 233, 0.5);
 }
 
 .col {
@@ -58,19 +61,10 @@ main {
   font-size: 60px;
   font-weight: 600;
 }
-.units {
+.unit {
   font-size: 18px;
   position: relative;
   top: -28px;
-}
-.C {
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-}
-.F {
-  color: grey;
-  text-decoration: none;
 }
 .today-icon {
   width: 150px;
@@ -83,25 +77,7 @@ main {
   list-style: none;
   padding: 0;
 }
-.active {
-  color: black;
-  font-weight: bold;
-}
-.active:hover {
-  cursor: default;
-}
 
-.unactive {
-  color: grey;
-  font-weight: normal;
-}
-.unactive:hover {
-  text-decoration: underline;
-}
-/*#updated-time {
-  font-size: 18px;
-}
-*/
 #description {
   font-size: 18px;
 }
@@ -137,6 +113,11 @@ main {
   border-radius: 5px;
   background: white;
   line-height: 1.5;
+  box-shadow: 2px 2px 5px #79c2d0;
+}
+
+.forecast-date {
+  margin: 5px 0 0;
 }
 .forecast-temp {
   margin: 0 5px;
@@ -144,4 +125,10 @@ main {
 .forecast-icon {
   display: block;
   margin: 0 auto;
+}
+.max {
+  font-weight: bold;
+}
+.min {
+  opacity: 0.6;
 }

@@ -50,11 +50,7 @@
                 <span class="city"></span>
                 <br />
                 <span class="today-temp" id="today-temp"></span
-                ><span class="units"
-                  ><a href="#" class="C active">°C</a> |<a class="F" href="#"
-                    >°F</a
-                  ></span
-                >
+                ><span class="unit">°C</span>
                 <br />
                 <div id="description"></div>
               </div>
@@ -70,16 +66,18 @@
             </div>
           </div>
         </main>
-        <footer>
+        <footer id="forecast">
           <div class="row">
             <div class="col-2 weather-forecast">
-              Thurday
+              <div>Thurday</div>
               <img
                 src="http://openweathermap.org/img/wn/01n@2x.png"
                 class="forecast-icon"
               />
-              <span class="forecast-temp">22°C</span
-              ><span class="forecast-temp">13°C</span>
+              <div>
+                <span class="forecast-temp max">22°C</span
+                ><span class="forecast-temp min">13°C</span>
+              </div>
             </div>
           </div>
         </footer>
